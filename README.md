@@ -1,1 +1,2 @@
-"# Serial-peripheral-interface" 
+# Serial-peripheral-interface
+About The educational project for advanced logic design course
