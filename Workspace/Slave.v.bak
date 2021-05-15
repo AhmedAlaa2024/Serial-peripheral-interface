@@ -1,0 +1,35 @@
+module Slave(
+	input reset,SCLK, CS, MOSI, MISO,
+
+	input [7:0] slaveDataToSend, slaveDataReceived
+	
+);
+integer count_data =0;
+
+initial begin
+	$display(count_data);
+end
+
+always @(posedge SCLK or posedge reset) begin
+
+
+
+
+
+
+	
+end
+
+
+always @(negedge SCLK) begin
+	
+end
+
+
+
+
+
+
+
+
+endmodule
