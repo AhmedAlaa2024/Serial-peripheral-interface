@@ -1,7 +1,7 @@
 module Slave(
-	input reset,SCLK, CS, MOSI, MISO,
-
+	input reset,SCLK, CS, MOSI, 
 	input [7:0] slaveDataToSend, 
+	output reg MISO,
 	output [7:0] slaveDataReceived
 	
 );
@@ -29,7 +29,7 @@ if(data_count > 8)
 
 if (!CS && !finished ) begin
 	//shifting
-	MiSO <= Reg_Data[0];
+	MISO <= Reg_Data[0];
 	Reg_Data <= {MOSI, Reg_Data[7:1]};
 	data_count = data_count +1;
 
