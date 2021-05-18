@@ -12,11 +12,9 @@ module Slave(
 //I don't have access to MOSI //ONLY The MASTER can Do That (At the ).
 
 reg [7:0] Reg_Data;
-
-
 integer data_count =0;
-
 reg finished = 0; //in case i wanted ti implement it in the future
+
 
 always @(negedge CS) begin //the start of the transmission
 	
@@ -36,8 +34,6 @@ else if(!CS && !finished ) begin //shifting
 
 	MISO <= Reg_Data[0];
 end
-
-
 
 end
 
