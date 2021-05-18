@@ -22,7 +22,7 @@ always @(negedge CS) begin //the start of the transmission
 	
 	slaveDataReceived= 'bxxxxxxxx; //inisialize it with dont care for debuging
 	Reg_Data = slaveDataToSend;
-	
+
 end
 
 
@@ -33,8 +33,10 @@ if (reset)
 	Reg_Data <= 0; //reset the register
 
 else if(!CS && !finished ) begin //shifting
+
 	MISO <= Reg_Data[0];
 end
+
 
 
 end
