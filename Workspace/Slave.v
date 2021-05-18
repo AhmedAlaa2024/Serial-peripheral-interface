@@ -25,15 +25,13 @@ if (reset)
 
 
 if(data_count > 8)
-	finished = 1; //must be a blocking assignment
+	finished <= 1; //must be a blocking assignment
 
 if (!CS && !finished ) begin
 	//shifting
-	MiSO <= Reg_Data[0];
+	MISO <= Reg_Data[0];
 	Reg_Data <= {MOSI, Reg_Data[7:1]};
 	data_count = data_count +1;
-
-end
 
 end
 
@@ -42,7 +40,11 @@ end
 
 always @(negedge SCLK) begin //Data Sampling
 
+if(!CS)
+slaveDataReceived[data_count -1]<=MOSI;
 
+if(data_count > 8)
+CS<=1;
 	
 end
 
