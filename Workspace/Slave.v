@@ -1,7 +1,7 @@
 module Slave(
-	input reset,SCLK, CS, MOSI, MISO,
-
+	input reset,SCLK, CS, MOSI, 
 	input [7:0] slaveDataToSend, 
+	output reg MISO,
 	output [7:0] slaveDataReceived
 	
 );
