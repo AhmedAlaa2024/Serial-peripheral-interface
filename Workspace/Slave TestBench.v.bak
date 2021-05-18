@@ -26,7 +26,7 @@ SCLK=0;
 reset=0;
 #(PERIOD) reset=1;
 CS=0;
-#(PERIOD*9) CS=1;
+#(PERIOD*8) CS=1;
 
 
 if(slaveDataReceived==ExpectedMasterDataToSend)
