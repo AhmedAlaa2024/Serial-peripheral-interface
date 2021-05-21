@@ -36,7 +36,7 @@ module Master(
      input            MISO;
 
      integer counter = 0;
-     integer flag    = 0; // Flag is raised when the transmision and recieving process is finished!
+     reg flag    = 0; // Flag is raised when the transmision and recieving process is being executed!
 
    // Buffer to store a copy of recieved data
      reg        [7:0] buffer;
@@ -50,31 +50,32 @@ always @(posedge start ) begin
 	default: CS<=3'b111;
    endcase
 
-   buffer <= masterDataReceived;
+   buffer <= masterDataToSend; //to be shifted one by one
    counter <= 0;
-   flag <= 1;
+   flag <= 1; // the 
    masterDataReceived <= 8'bxxxxxxxx;
 end
 
 
 always @(posedge clk) begin // Data Shifting
-   if (counter > 7)
-	flag <= 0;
-
-   if (Transmision_flag) begin
-	MOSI <= masterDataToSend[0];
-	counter <= counter + 1;
+   
+   if (flag) begin
+	MOSI <= buffer[0];
    end
 end
 
 always @(negedge clk or posedge reset) begin
+
    if (reset)
    buffer <= 0;
    else begin
-         if(Receiving_flag) begin
+      if (counter > 7)
+	      flag <= 0;
+      if(flag) begin
          buffer <= {MISO,buffer[7:1]};
          masterDataReceived <= {MISO,buffer[7:1]};
          counter <= counter + 1;
-         end  
+      end  
    end
+end
 endmodule
