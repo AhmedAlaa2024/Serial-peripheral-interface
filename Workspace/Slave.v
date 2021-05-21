@@ -13,7 +13,7 @@ module Slave(
 
 reg [7:0] Reg_Data;
 integer data_count =0;
-reg finished = 0; //in case i wanted ti implement it in the future
+reg finished = 0; //in case i wanted to implement it in the future
 
 
 always @(negedge CS) begin //the start of the transmission
