@@ -32,8 +32,8 @@ slaveDataToSend=0;
 ExpectedMasterDataToReceive=0;
 SCLK=0;
 failures=0;
-reset=0;
-#(PERIOD) reset=1;
+reset=1;
+#(PERIOD) reset=0;
 
 for(index = 1; index <= TESTCASECOUNT; index=index+1) begin
 		$display("Running test set %d", index);
