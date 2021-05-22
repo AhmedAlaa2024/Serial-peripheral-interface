@@ -27,7 +27,7 @@ assign testcase_SlaveDataToSend[2]=8'b10011000;
 
 initial begin
 index=0;
-i=0;
+
 slaveDataToSend=0;
 ExpectedMasterDataToReceive=0;
 SCLK=0;
@@ -38,9 +38,12 @@ reset=1;
 for(index = 1; index <= TESTCASECOUNT; index=index+1) begin
 		$display("Running test set %d", index);
 slaveDataToSend = testcase_SlaveDataToSend[index];
+CS=1;
+#(PERIOD)
 CS=0;
-#(PERIOD*9) CS=1;
-
+i=0;
+#(PERIOD*9)
+CS=1;
 
 if(slaveDataReceived==testcase_MasterDataToSend[index])
 	$display("Received Successfully");
@@ -52,7 +55,7 @@ else begin
 if (ExpectedMasterDataToReceive == testcase_SlaveDataToSend[index])
 	$display("Sent Successfully");
 else begin
-	$display("Sending Failed : (Expected: %b, Send: %b)",SlaveDataToSend,ExpectedMasterDataToReceive);
+	$display("Sending Failed : (Expected: %b, Send: %b)",slaveDataToSend,ExpectedMasterDataToReceive);
         failures=failures+1;
       end
 end
@@ -60,6 +63,7 @@ if(failures) $display("FAILURE: %d out of %d testcases have failed", failures, T
 	else $display("SUCCESS: All %d testcases have been successful", TESTCASECOUNT); 
 end
 always @(posedge SCLK) begin
+
 
 if(!CS) begin
 	MOSI <= testcase_MasterDataToSend[index][i];
@@ -69,7 +73,7 @@ end
 
 always @(negedge SCLK) begin
 if(!CS)
-        ExpectedMasterDataToReceive<={MISO,ExpectedMasterDataToReceive[7:1]};
+        ExpectedMasterDataToReceive <= {MISO,ExpectedMasterDataToReceive[7:1]};
   end
 always
 #(PERIOD/2) SCLK=~SCLK;
