@@ -25,14 +25,15 @@ module Master(
 					 -------------------------------------
 */
   
-   integer counter = 0;
-   reg flag    = 0; // Flag is raised when the transmision and recieving process is being executed!
+   integer counter = 1;
+   reg flag=0; // Flag is raised when the transmision and recieving process is being executed!
 
    // Buffer to store a copy of recieved data
-   reg        [7:0] buffer;
+   reg [7:0] buffer;
 
 
-assign SCLK= clk;
+assign SCLK = clk;
+assign flag = (counter < 9) ? 1: 0;
 
 always @(posedge start ) begin
    // Setup Configurations
@@ -45,32 +46,19 @@ always @(posedge start ) begin
 	CS<=3'b011;
    else
       CS<=3'b111;
-masterDataReceived<= 'bxxxxxxxx;
+
+   masterDataReceived <= 'bxxxxxxxx;
    buffer <= masterDataToSend; //to be shifted one by one
-   counter <= 0;
-   flag <= 1; //the transmission begins
+   counter <= 1;
+   //flag=1;
    
 end
 
 
-always @(negedge clk) begin 
-   
-   
-   if (counter > 8) begin
-	CS <= 3'b111; //anothor idea is to control the SCLK
-
-         flag <= 0;
-end
-   if(flag) begin
-       buffer <= {MISO, buffer[7:1]};
-       masterDataReceived <= {MISO, masterDataReceived[7:1]};
-       counter <= counter + 1;
-      end  
-   end
 
 
 
-always @(posedge clk or posedge reset) begin // Data Shifting
+always @(posedge SCLK or posedge reset) begin // Data Shifting
 
 if (reset)
   	 buffer <= 0;
@@ -79,4 +67,26 @@ else if (flag) begin
 
 end
 end
+
+
+
+always @(negedge SCLK) begin 
+   
+   
+   if (counter > 7) begin
+	CS <= 3'b111; //anothor idea is to control the SCLK
+   end
+
+   if(flag) begin
+
+      buffer <= {MISO, buffer[7:1]};
+      masterDataReceived <= {MISO, masterDataReceived[7:1]};
+      counter <= counter + 1;
+
+      end  
+
+
+   end
+
+
 endmodule
