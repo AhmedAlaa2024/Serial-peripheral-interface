@@ -12,14 +12,14 @@ module Slave(
 //I don't have access to MOSI //ONLY The MASTER can Do That (At the ).
 
 reg [7:0] Reg_Data;
-integer data_count =0;
 reg finished = 0; //in case i wanted to implement it in the future
 
 
 always @(negedge CS) begin //the start of the transmission
 	
-	slaveDataReceived= 'bxxxxxxxx; //inisialize it with dont care for debuging
-	Reg_Data = slaveDataToSend;
+	slaveDataReceived<= 'bxxxxxxxx; //inisialize it with dont care for debuging
+	Reg_Data <= slaveDataToSend;
+
 
 end
 
@@ -31,7 +31,6 @@ if (reset)
 	Reg_Data <= 0; //reset the register
 
 else if(!CS ) begin //shifting
-
 	MISO <= Reg_Data[0];
 
 end

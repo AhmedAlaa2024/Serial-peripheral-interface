@@ -24,15 +24,14 @@ module Master(
 					|masterDataReceived		  MISO|
 					 -------------------------------------
 */
-  
+  assign SCLK = (flag)? clk:
+                  0;
+
    integer counter = 0;
    reg flag    = 0; // Flag is raised when the transmision and recieving process is being executed!
 
    // Buffer to store a copy of recieved data
    reg        [7:0] buffer;
-
-
-assign SCLK= clk;
 
 always @(posedge start ) begin
    // Setup Configurations
@@ -57,7 +56,7 @@ always @(negedge clk) begin
    
    
    if (counter > 8) begin
-	CS <= 3'b111; //anothor idea is to control the SCLK
+	//CS <= 3'b111; //anothor idea is to control the SCLK
 
          flag <= 0;
 end
