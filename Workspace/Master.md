@@ -15,20 +15,20 @@
 | masterDataToSend   | input     | [7:0] |             |
 | masterDataReceived | output    | [7:0] |             |
 | SCLK               | output    |       |             |
-| CS                 | output    | [2:0] |             |
+| CS                 | output    | [0:2] |             |
 | MOSI               | output    |       |             |
 | MISO               | input     |       |             |
 ## Signals, constants and types
 ### Signals
-| Name    | Type             | Description |
-| ------- | ---------------- | ----------- |
-| counter | integer          |             |
-| flag    | reg              |             |
-| buffer  | reg        [7:0] |             |
+| Name    | Type      | Description |
+| ------- | --------- | ----------- |
+| counter | integer   |             |
+| flag    | reg       |             |
+| buffer  | reg [7:0] |             |
 ## Processes
 - **unnamed**: ***( @(posedge start ) )***
 
-- **unnamed**: ***( @(negedge SCLK) )***
-
 - **unnamed**: ***( @(posedge SCLK or posedge reset) )***
+
+- **unnamed**: ***( @(negedge SCLK) )***
 
