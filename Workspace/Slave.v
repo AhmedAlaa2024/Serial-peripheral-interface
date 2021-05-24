@@ -19,17 +19,17 @@ always @(negedge CS) begin //the start of the transmission
 	
 	slaveDataReceived<= 'bxxxxxxxx; //inisialize it with dont care for debuging
 	Reg_Data <= slaveDataToSend;
-
-
+	MISO<= 1'bz;
 end
-
-
+ 
+always@(posedge CS) MISO<= 1'bz;
 
 always @(posedge SCLK or posedge reset) begin //Data Shifting
 	
-if (reset)
+if (reset) begin
 	Reg_Data <= 0; //reset the register
-
+	MISO<= 1'bz;
+end
 else if(!CS ) begin //shifting
 	MISO <= Reg_Data[0];
 

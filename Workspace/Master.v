@@ -6,7 +6,7 @@ module Master(
    , input   [7:0] masterDataToSend,
     output reg [7:0] masterDataReceived,
     output  SCLK,
-	output reg [2:0] CS,
+	output reg [0:2] CS,
      output reg MOSI,
 
    // Input Interface
@@ -25,7 +25,7 @@ module Master(
 					 -------------------------------------
 */
   
-   integer counter = 1;
+   integer counter = 0;
    reg flag=0; // Flag is raised when the transmision and recieving process is being executed!
 
    // Buffer to store a copy of recieved data
@@ -33,24 +33,24 @@ module Master(
 
 
 assign SCLK = clk;
-assign flag = (counter < 9) ? 1: 0;
+
 
 always @(posedge start ) begin
    // Setup Configurations
    
    if(slaveSelect == 2'b00)
-   	CS<=3'b110;
+   	CS<=3'b011;
    else if(slaveSelect == 2'b01) 
    	CS<=3'b101;
    else if(slaveSelect == 2'b10) 
-	CS<=3'b011;
+	CS<=3'b110;
    else
       CS<=3'b111;
 
    masterDataReceived <= 'bxxxxxxxx;
    buffer <= masterDataToSend; //to be shifted one by one
    counter <= 1;
-   //flag=1;
+   flag<=1;
    
 end
 
@@ -74,6 +74,7 @@ always @(negedge SCLK) begin
    
    
    if (counter > 7) begin
+	flag <=0; //trans ends
 	CS <= 3'b111; //anothor idea is to control the SCLK
    end
 
