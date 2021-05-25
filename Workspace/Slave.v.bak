@@ -12,7 +12,7 @@ module Slave(
 //I don't have access to MOSI //ONLY The MASTER can Do That (At the ).
 
 reg [7:0] Reg_Data;
-reg finished = 0; //in case i wanted to implement it in the future
+
 
 
 always @(negedge CS) begin //the start of the transmission
@@ -21,7 +21,7 @@ always @(negedge CS) begin //the start of the transmission
 	Reg_Data <= slaveDataToSend;
 	MISO<= 1'bz;
 end
-
+ 
 always@(posedge CS) MISO<= 1'bz;
 
 always @(posedge SCLK or posedge reset) begin //Data Shifting
