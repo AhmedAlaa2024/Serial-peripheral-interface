@@ -24,7 +24,6 @@
 | index                      | integer    |             |
 | failures                   | integer    |             |
 | i                          | integer    |             |
-| n                          | integer    |             |
 | testcase_MasterDataToSend  | wire [7:0] |             |
 | testcase_SlaveDataToSend   | wire [7:0] |             |
 ### Constants
@@ -33,9 +32,9 @@
 | PERIOD        |      | 6     |             |
 | TESTCASECOUNT |      | 4     |             |
 ## Processes
-- **unnamed**: ***( @(negedge clk) )***
-
 - **unnamed**: ***( @(posedge clk) )***
+
+- **unnamed**: ***( @(negedge clk) )***
 
 - **unnamed**: ***(  )***
 
