@@ -39,11 +39,11 @@ always @(posedge start ) begin
    // Setup Configurations
    
    if(slaveSelect == 2'b00)
-   	CS<=3'b011;
+   	CS<=3'b110;
    else if(slaveSelect == 2'b01) 
    	CS<=3'b101;
    else if(slaveSelect == 2'b10) 
-	CS<=3'b110;
+	CS<=3'b011;
    else
       CS<=3'b111;
 
