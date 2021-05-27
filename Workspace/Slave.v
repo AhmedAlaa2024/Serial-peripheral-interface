@@ -22,7 +22,7 @@ always @(negedge CS) begin //the start of the transmission
 	
 end
  
-always@(posedge CS) MISO<= 1'bz;
+always@(posedge CS) MISO<= 1'bz; //end of transmission
 
 always @(posedge SCLK or posedge reset) begin //Data Shifting
 	

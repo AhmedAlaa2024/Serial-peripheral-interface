@@ -19,7 +19,7 @@ always @(negedge CS) begin //the start of the transmission
 	
 	slaveDataReceived<= 'bxxxxxxxx; //inisialize it with dont care for debuging
 	Reg_Data <= slaveDataToSend;
-	MISO<= 1'bz;
+	
 end
  
 always@(posedge CS) MISO<= 1'bz;

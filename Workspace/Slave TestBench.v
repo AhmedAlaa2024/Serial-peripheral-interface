@@ -48,7 +48,7 @@ for(index = 1; index <= TESTCASECOUNT; index=index+1) begin
 		$display("Running test set %d", index);
 slaveDataToSend = testcase_SlaveDataToSend[index];
 #(PERIOD) 
-CS=0;
+CS<=0; 
 i=0;
 #(PERIOD*9)
 CS=1;
