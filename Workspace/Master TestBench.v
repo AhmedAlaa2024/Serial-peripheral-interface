@@ -2,9 +2,9 @@ module Master_TB();
 //inputs
 reg clk,reset,start,MISO;
 reg[1:0] slaveSelect;
-
-//ouput
 reg [7:0]masterDataToSend;
+//ouput
+
 wire [7:0]masterDataReceived;
 reg [7:0] ExpectedSlaveDataToReceive;
 wire SCLK;
@@ -56,6 +56,7 @@ clk=0;
 failures=0;
 reset=1;
 start=0;
+masterDataReceived=0;
 #(PERIOD) reset=0;
 
 for(index=1; index<=TESTCASECOUNT; index=index+1) begin
