@@ -56,7 +56,7 @@ clk=0;
 failures=0;
 reset=1;
 start=0;
-masterDataReceived=0;
+
 #(PERIOD) reset=0;
 
 for(index=1; index<=TESTCASECOUNT; index=index+1) begin

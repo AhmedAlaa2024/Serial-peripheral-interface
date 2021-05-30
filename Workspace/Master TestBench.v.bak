@@ -2,9 +2,9 @@ module Master_TB();
 //inputs
 reg clk,reset,start,MISO;
 reg[1:0] slaveSelect;
-
-//ouput
 reg [7:0]masterDataToSend;
+//ouput
+
 wire [7:0]masterDataReceived;
 reg [7:0] ExpectedSlaveDataToReceive;
 wire SCLK;
@@ -49,28 +49,28 @@ MISO
 
 
 initial begin
+slaveSelect=1;
 index=0;
 ExpectedSlaveDataToReceive=0;
 clk=0;
 failures=0;
 reset=1;
 start=0;
+masterDataReceived=0;
 #(PERIOD) reset=0;
 
-
 for(index=1; index<=TESTCASECOUNT; index=index+1) begin
+
+
 $display("Running test set %d", index);
 masterDataToSend = testcase_MasterDataToSend[index]; 
-
 #(PERIOD)
+i=0;
 start=1;
 
 #(PERIOD)
 start=0;
-
-slaveSelect=1;
-i=0;
-
+#(PERIOD*9)
 
 if(masterDataReceived==testcase_SlaveDataToSend[index])
 	$display("Received Successfully : (Expected: %b, Received: %b)",testcase_SlaveDataToSend[index],masterDataReceived);
@@ -91,17 +91,17 @@ if(failures) $display("FAILURE: %d out of %d testcases have failed", failures, T
 
 end
 always @(posedge clk) begin
-if(start) 
+    if(m.flag) 
 begin
 	MISO <= testcase_SlaveDataToSend[index][i];
-	
+	        i<=i+1;
     end
 end
 always @(negedge clk) begin
-
-      if(i<=9)
+     
+   if(m.flag) 
         ExpectedSlaveDataToReceive <= {MOSI,ExpectedSlaveDataToReceive[7:1]};
-        i<=i+1;
+
   end
 
 always
