@@ -1,12 +1,12 @@
 # Reading pref.tcl
-# OpenFile {D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master.v}
-vlog -reportprogress 300 -work work {D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master.v}
+# OpenFile {D:/CMP #1/Second Semester/Logic Design/SPI/Workspace/Master TestBench.v}
+vlog -reportprogress 300 -work work {D:/CMP #1/Second Semester/Logic Design/SPI/Workspace/Master TestBench.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:09:45 on May 31,2021
-# vlog -reportprogress 300 -work work D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master.v 
-# -- Compiling module Master
+# Start time: 01:13:39 on May 28,2021
+# vlog -reportprogress 300 -work work D:/CMP #1/Second Semester/Logic Design/SPI/Workspace/Master TestBench.v 
+# -- Compiling module Master_TB
 # 
 # Top level modules:
-# 	Master
-# End time: 20:09:45 on May 31,2021, Elapsed time: 0:00:00
+# 	Master_TB
+# End time: 01:13:40 on May 28,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
