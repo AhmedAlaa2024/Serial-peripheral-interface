@@ -31,7 +31,9 @@ module Master(
    assign SCLK = clk;
 
 
-always @(posedge start ) begin   // Setup Configurations
+
+always @(posedge SCLK or posedge reset or posedge start) begin // Data Shifting
+if(start)begin
    if(slaveSelect == 2'b00)     // If SlaveSelect = 0
    	CS<=3'b011; // Open the connection to the first Slave and close the reset
    else if(slaveSelect == 2'b01) // If SlaveSelect = 1
@@ -45,10 +47,10 @@ always @(posedge start ) begin   // Setup Configurations
    buffer <= masterDataToSend; // To be shifted bit by bit
    counter <= 1; // Initialize the counter by 1
    flag<=0; // To initialize the flag by 0
+
 end
 
 
-always @(posedge SCLK or posedge reset) begin // Data Shifting
    if (reset) // If Reset bit is triggered
       buffer <= 0; // Remove the data in the buffer
    else if (!flag) // If the flag is not raised yet

@@ -64,11 +64,12 @@ for(index=1; index<=TESTCASECOUNT; index=index+1) begin
 
 $display("Running test set %d", index);
 masterDataToSend = testcase_MasterDataToSend[index]; 
-#(PERIOD)
-i=0;
-start=1;
 
+
+start=1;
+i=0;
 #(PERIOD)
+
 start=0;
 #(PERIOD*9)
 
@@ -91,7 +92,7 @@ if(failures) $display("FAILURE: %d out of %d testcases have failed", failures, T
 
 end
 always @(posedge clk) begin
-    if(m.flag) 
+    if(!m.flag) 
 begin
 	MISO <= testcase_SlaveDataToSend[index][i];
 	        i<=i+1;
@@ -99,7 +100,7 @@ begin
 end
 always @(negedge clk) begin
      
-   if(m.flag) 
+   if(!m.flag) 
         ExpectedSlaveDataToReceive <= {MOSI,ExpectedSlaveDataToReceive[7:1]};
 
   end
