@@ -31,20 +31,22 @@ module Master(
    assign SCLK = clk;
 
 
-always @(posedge start ) begin   // Setup Configurations
-   if(slaveSelect == 2'b00)     // If SlaveSelect = 0
-   	CS<=3'b011; // Open the connection to the first Slave and close the reset
-   else if(slaveSelect == 2'b01) // If SlaveSelect = 1
-   	CS<=3'b101; // Open the connection to the second Slave and close the reset
-   else if(slaveSelect == 2'b10) // If SlaveSelect = 2
-	   CS<=3'b110; // Open the connection to the third Slave and close the reset
-   else // If any wrong number received by the SlaveSelect
-      CS<=3'b111; // Close all the connections to all the slaves
+always @(posedge start) begin   // Setup Configurations
+   if (counter == 0 || counter > 7) begin
+      if(slaveSelect == 2'b00)     // If SlaveSelect = 0
+         CS<=3'b011; // Open the connection to the first Slave and close the reset
+      else if(slaveSelect == 2'b01) // If SlaveSelect = 1
+         CS<=3'b101; // Open the connection to the second Slave and close the reset
+      else if(slaveSelect == 2'b10) // If SlaveSelect = 2
+         CS<=3'b110; // Open the connection to the third Slave and close the reset
+      else // If any wrong number received by the SlaveSelect
+         CS<=3'b111; // Close all the connections to all the slaves
 
-   masterDataReceived <= 'bxxxxxxxx; // To initialize the masterDataReceived by unknowns bit
-   buffer <= masterDataToSend; // To be shifted bit by bit
-   counter <= 1; // Initialize the counter by 1
-   flag<=0; // To initialize the flag by 0
+      masterDataReceived <= 'bxxxxxxxx; // To initialize the masterDataReceived by unknowns bit
+      buffer <= masterDataToSend; // To be shifted bit by bit
+      counter <= 1; // Initialize the counter by 1
+      flag<=0; // To initialize the flag by 0
+   end
 end
 
 
