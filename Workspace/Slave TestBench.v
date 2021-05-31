@@ -61,9 +61,9 @@ else begin
       end
 
 if (ExpectedMasterDataToReceive == testcase_SlaveDataToSend[index])
-	$display("Sent Successfully : (Expected: %b, Send: %b)",slaveDataToSend,ExpectedMasterDataToReceive);
+	$display("Sent Successfully : (Expected: %b, Sent: %b)",slaveDataToSend,ExpectedMasterDataToReceive);
 else begin
-	$display("Sending Failed : (Expected: %b, Send: %b)",slaveDataToSend,ExpectedMasterDataToReceive);
+	$display("Sending Failed : (Expected: %b, Sent: %b)",slaveDataToSend,ExpectedMasterDataToReceive);
         failures=failures+1;
       end
 end
