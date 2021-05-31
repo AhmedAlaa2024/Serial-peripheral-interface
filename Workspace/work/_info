@@ -9,20 +9,44 @@ z2
 !i10f 100
 cModel Technology
 Z0 dD:/CMP #1/Second Semester/Logic Design/SPI/Workspace
+vMaster
+!s110 1622484585
+!i10b 1
+!s100 RNk1SV`]S_DKR[[Ah7OZc2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IBYYYz796azbbD3PA>EhoB1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+dD:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace
+w1622484558
+8D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master.v
+FD:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master.v
+!i122 3
+L0 1 75
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1622484585.000000
+!s107 D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master.v|
+!s90 -reportprogress|300|-work|work|D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+n@master
 vMaster_TB
 !s110 1622157220
 !i10b 1
 !s100 z`IO5SK`:oYl;QohdYAFS2
-!s11b Dg1SIo80bB@j0V0VzS_@n1
+R1
 IKz5;FBhf37U_aA>:=cMkc2
-VDg1SIo80bB@j0V0VzS_@n1
+R2
 R0
 w1622157201
 8D:/CMP #1/Second Semester/Logic Design/SPI/Workspace/Master TestBench.v
 FD:/CMP #1/Second Semester/Logic Design/SPI/Workspace/Master TestBench.v
 !i122 2
 L0 1 108
-OV;L;2020.1;71
+R3
 r1
 !s85 0
 31
@@ -30,6 +54,6 @@ r1
 !s107 D:/CMP #1/Second Semester/Logic Design/SPI/Workspace/Master TestBench.v|
 !s90 -reportprogress|300|-work|work|D:/CMP #1/Second Semester/Logic Design/SPI/Workspace/Master TestBench.v|
 !i113 1
-o-work work
-tCvgOpt 0
+R4
+R5
 n@master_@t@b
