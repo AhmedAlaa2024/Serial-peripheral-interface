@@ -47,6 +47,8 @@ MOSI,
 MISO
 );
 
+wire flag = m.flag;
+reg [3:0] counter = m.counter;
 
 initial begin
 slaveSelect=1;
@@ -67,9 +69,9 @@ masterDataToSend = testcase_MasterDataToSend[index];
 
 
 start=1;
-
-#(PERIOD)
 i=0;
+#(PERIOD)
+
 start=0;
 #(PERIOD*9)
 
@@ -92,7 +94,7 @@ if(failures) $display("FAILURE: %d out of %d testcases have failed", failures, T
 
 end
 always @(posedge clk) begin
-    if(!m.flag) 
+    if(!flag) 
 begin
 	MISO <= testcase_SlaveDataToSend[index][i];
 	        i<=i+1;
@@ -100,7 +102,7 @@ begin
 end
 always @(negedge clk) begin
      
-   if(!m.flag) 
+   if(!flag) 
         ExpectedSlaveDataToReceive <= {MOSI,ExpectedSlaveDataToReceive[7:1]};
 
   end

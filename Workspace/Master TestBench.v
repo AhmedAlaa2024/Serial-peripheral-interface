@@ -47,7 +47,6 @@ MOSI,
 MISO
 );
 
-
 initial begin
 slaveSelect=1;
 index=0;
