@@ -73,14 +73,14 @@ start=0;
 #(PERIOD*9)
 
 if(masterDataReceived==testcase_SlaveDataToSend[index])
-	$display("Received Successfully : (Expected: %b, Received: %b)",testcase_SlaveDataToSend[index],masterDataReceived);
+	$display("Received Successfully");
 else begin
 	$display("Receiving Failed : (Expected: %b, Received: %b)",testcase_SlaveDataToSend[index],masterDataReceived);
         failures=failures+1;
 end
 
 if (ExpectedSlaveDataToReceive == testcase_MasterDataToSend[index])
-	$display("Sent Successfully : (Expected: %b, Send: %b)",masterDataToSend,ExpectedSlaveDataToReceive);
+	$display("Sent Successfully");
 else begin
 	$display("Sending Failed : (Expected: %b, Send: %b)",masterDataToSend,ExpectedSlaveDataToReceive);
         failures=failures+1;

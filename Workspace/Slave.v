@@ -9,9 +9,8 @@ module Slave(
 	
 );
 
-//I don't have access to MOSI //ONLY The MASTER can Do That (At the ).
 
-reg [7:0] Reg_Data;
+reg [7:0] Reg_Data; //internal Register within the slave
 
 
 
@@ -22,18 +21,20 @@ always @(negedge CS) begin //the start of the transmission
 	
 end
  
-always@(posedge CS) MISO<= 1'bz; //end of transmission
+always@(posedge CS) //end of transmission
+	MISO<= 1'bz; 
 
-always @(posedge SCLK or posedge reset) begin //Data Shifting
+
+always @(posedge SCLK or posedge reset) begin //Data Shifting -- Async reset
 	
-if (reset) begin
-	Reg_Data <= 0; //reset the register
-	MISO<= 1'bz;
-end
-else if(!CS ) begin //shifting
-	MISO <= Reg_Data[0];
+	if (reset) begin
+		Reg_Data <= 0; //reset the register
+		MISO<= 1'bz;
+	end
+	else if(!CS ) begin //shifting
+		MISO <= Reg_Data[0];
 
-end
+	end
 
 end
 
@@ -42,10 +43,10 @@ end
 
 always @(negedge SCLK) begin //Data Sampling
 
-if(!CS) begin	
-	Reg_Data <= {MOSI, Reg_Data[7:1]};
-	slaveDataReceived <= {MOSI, slaveDataReceived[7:1]};
-	end
+	if(!CS) begin	
+		Reg_Data <= {MOSI, Reg_Data[7:1]};
+		slaveDataReceived <= {MOSI, slaveDataReceived[7:1]};
+		end
 
 end
 
