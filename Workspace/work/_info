@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dD:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace
 vDevelopmentTB
-!s110 1622508876
+!s110 1622572739
 !i10b 1
 !s100 iz?d`UzUG[26_NAA<[@H`2
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,13 +20,13 @@ R0
 w1622508827
 8D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Development TestBench.v
 FD:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Development TestBench.v
-!i122 100
+!i122 105
 L0 1 111
 Z3 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1622508876.000000
+!s108 1622572739.000000
 !s107 D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Development TestBench.v|
 !s90 -reportprogress|300|-work|work|D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Development TestBench.v|
 !i113 1
@@ -34,23 +34,23 @@ Z4 o-work work
 Z5 tCvgOpt 0
 n@development@t@b
 vMaster
-!s110 1622508867
+!s110 1622572730
 !i10b 1
-!s100 >aaX4WYk<Z<;EYWKJeKM_1
+!s100 dV2QRnoSN^7n2Baz8DO]^2
 R1
-ImRk9?@0ifaRJ4fE@PF2T^2
+IGGo;`H=Ya3LXR<ETOGV6b2
 R2
 R0
-w1622508568
+w1622572610
 8D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master.v
 FD:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master.v
-!i122 96
-L0 1 74
+!i122 101
+L0 1 71
 R3
 r1
 !s85 0
 31
-!s108 1622508867.000000
+!s108 1622572729.000000
 !s107 D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master.v|
 !s90 -reportprogress|300|-work|work|D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master.v|
 !i113 1
@@ -58,23 +58,23 @@ R4
 R5
 n@master
 vMaster_TB
-!s110 1622508868
+!s110 1622572733
 !i10b 1
-!s100 Kc^[BG9aezzbIF04LJ7`z0
+!s100 _e0FZTBBDLcOH[_IE;D]m0
 R1
-Ic[kOJIKMSeRVD<TIoSOG63
+I;?1Gj?7Fz^9DekTI2bLFJ0
 R2
 R0
-w1622508711
+Z6 w1622571857
 8D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master TestBench.v
 FD:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master TestBench.v
-!i122 97
+!i122 102
 L0 1 109
 R3
 r1
 !s85 0
 31
-!s108 1622508868.000000
+!s108 1622572733.000000
 !s107 D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master TestBench.v|
 !s90 -reportprogress|300|-work|work|D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Master TestBench.v|
 !i113 1
@@ -82,23 +82,23 @@ R4
 R5
 n@master_@t@b
 vSlave
-!s110 1622508870
+!s110 1622572736
 !i10b 1
-!s100 @24<:LBV?L;9__n9PDEL31
+!s100 CEZU_H`;;dHN_feYzj_mf0
 R1
-Ie7;CR;8?RSK@WD6VkQ9XE0
+IhK600ea>8SA4P[0`RV:O72
 R2
 R0
-w1622500247
+R6
 8D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Slave.v
 FD:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Slave.v
-!i122 98
-L0 1 56
+!i122 103
+L0 1 57
 R3
 r1
 !s85 0
 31
-!s108 1622508870.000000
+!s108 1622572736.000000
 !s107 D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Slave.v|
 !s90 -reportprogress|300|-work|work|D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Slave.v|
 !i113 1
@@ -106,23 +106,23 @@ R4
 R5
 n@slave
 vSlave_TB
-!s110 1622508874
+!s110 1622572738
 !i10b 1
-!s100 ^KSNRS9>?V_6W_WFGP_b22
+!s100 jb?XUo<lJGi:1N;<oQSSm2
 R1
-IEKjldPJ_JSlaiG6]DhPSb0
+I5M1Hf4eK8Th`h:[Mc?E5R3
 R2
 R0
-w1622500258
+R6
 8D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Slave TestBench.v
 FD:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Slave TestBench.v
-!i122 99
+!i122 104
 L0 1 89
 R3
 r1
 !s85 0
 31
-!s108 1622508874.000000
+!s108 1622572737.000000
 !s107 D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Slave TestBench.v|
 !s90 -reportprogress|300|-work|work|D:/Cairo University/Faculty of Engineering/Computer Engineering Department/First Year/Second Semester/Advanced Logic Design/Project/Serial-peripheral-interface/Workspace/Slave TestBench.v|
 !i113 1
