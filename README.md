@@ -10,20 +10,6 @@ of the SPI interface followed by an introduction to Analog Devices’ SPI
 enabled switches and muxes, and how they help reduce the number of
 digital GPIOs in system board design.
 
-## Features
-*
-  *
-  *
-  *
-*
-  *
-  *
-  *
-*
-  *
-  *
-  *
-
 ## Team Members:
 * Ahmed Alaa El-Sayed Arabi Zidan
 * Ahmed Atta
