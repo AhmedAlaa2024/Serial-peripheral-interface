@@ -38,7 +38,6 @@ assign testcase_SlaveDataToSend[4]=8'b10011000;
 initial begin
 index=0;
 CS=1;
-ExpectedMasterDataToReceive=0;
 SCLK=0;
 failures=0;
 reset=1;
@@ -47,6 +46,7 @@ reset=1;
 for(index = 1; index <= TESTCASECOUNT; index=index+1) begin
 		$display("Running test set %d", index);
 slaveDataToSend = testcase_SlaveDataToSend[index];
+ExpectedMasterDataToReceive=8'bxxxxxxxx;
 #(PERIOD) 
 CS<=0; 
 i=0;
